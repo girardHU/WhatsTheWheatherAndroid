@@ -31,7 +31,7 @@ public class DaysForecastAdapter extends RecyclerView.Adapter<DaysForecastViewHo
     @Override
     public void onBindViewHolder(@NonNull DaysForecastViewHolder holder, int position) {
         holder.weatherImageView.setImageResource(getWeatherResource(this.datas.get(String.valueOf(position + 1)).getAsJsonObject().get("weather").getAsString()));
-        holder.textViewDay.setText("J + " + position + 1);
+        holder.textViewDay.setText("J + " + (position + 1));
         holder.textViewTemp.setText(this.datas.get(String.valueOf(position + 1)).getAsJsonObject().get("temperature").getAsString());
         if (position == 3) {
             holder.divider.setVisibility(View.GONE);
