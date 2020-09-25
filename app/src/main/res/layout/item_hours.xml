@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentConstraintLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Space
+        android:id="@+id/beginSpace"
+        android:layout_width="10dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearjayoutHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/beginSpace"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/hoursTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0H"
+            android:textColor="@android:color/white" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tempTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8°C"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/space01Hours"
+        android:layout_width="10dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayoutSpacerHours"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linearjayoutHours"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutSpacerHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/space01Hours"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/spacerHours"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/humidity_wind_spacing_bar" />
+
+    </FrameLayout>
+
+    <Space
+        android:id="@+id/space02Hours"
+        android:layout_width="10dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutSpacerHours"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
